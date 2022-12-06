@@ -1,3 +1,4 @@
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');  //para obtener path absoluto
 
 // Reglas Compilacion de React JSX en ficheros .JS
@@ -28,6 +29,10 @@ module.exports = {
     output: {  
         path: path.join(__dirname,'build'), //path absoluto dir salida
     },
+    //plugins
+    plugins: [
+        new HtmlWebpackPlugin({ template: 'src/index.html'})
+    ],
     //modulo babel para React JSX
     module: {
         rules: [ 
